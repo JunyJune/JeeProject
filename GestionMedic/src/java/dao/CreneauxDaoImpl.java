@@ -13,6 +13,12 @@ import entities.Creneaux;
  */
 public class CreneauxDaoImpl implements CreneauxDao{
     
+    private DAOFactory daoFactory;
+
+    public CreneauxDaoImpl(DAOFactory d) {
+        daoFactory = d;
+    }
+    
     @Override
     public void createCreneaux(Creneaux creneaux) throws DAOException{
         

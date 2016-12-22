@@ -92,6 +92,21 @@ public class DAOFactory {
     
     //Récupération de l'implémentation du DAO Médecin
     public MedecinDao getMedecinDao(){
-        return new MedecinDaoImpl();
+        return new MedecinDaoImpl(this);
+    }
+    
+    //Récupération de l'implémentation du DAO Patient
+    public PatientDao getPatientDao(){
+        return new PatientDaoImpl(this);
+    }
+    
+    //Récupération de l'implémentation du DAO Creneaux
+    public CreneauxDao getCreneauxDao(){
+        return new CreneauxDaoImpl(this);
+    }
+    
+    //Récupération de l'implémentation du DAO RendezVous
+    public RendezVousDao getRendezVousDao(){
+        return new RendezVousDaoImpl(this);
     }
 }

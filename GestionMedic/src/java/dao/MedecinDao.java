@@ -6,12 +6,19 @@
 package dao;
 
 import entities.Medecin;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
  * @author aude
  */
+@Stateless
 public interface MedecinDao {
+    
+//    @PersistenceContext(unitName = "GestionMedicPU")
+//            private EntityManager entityManager;
     
     void createMedecin(Medecin medecin) throws DAOException;
     

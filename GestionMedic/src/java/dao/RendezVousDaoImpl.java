@@ -13,6 +13,12 @@ import entities.RendezVous;
  */
 public class RendezVousDaoImpl implements RendezVousDao{
     
+    private DAOFactory daoFactory;
+
+    public RendezVousDaoImpl(DAOFactory d) {
+        daoFactory = d;
+    }
+    
     @Override
     public void createRendezVous(RendezVous rdv) throws DAOException{
         

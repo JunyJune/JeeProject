@@ -13,6 +13,12 @@ import entities.Patient;
  */
 public class PatientDaoImpl implements PatientDao{
     
+    private DAOFactory daoFactory;
+
+    public PatientDaoImpl(DAOFactory d) {
+        daoFactory = d;
+    }
+    
     @Override
     public void createPatient(Patient patient) throws DAOException{
         
