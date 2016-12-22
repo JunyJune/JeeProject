@@ -7,6 +7,9 @@ package dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 /**
@@ -15,7 +18,7 @@ import java.util.Properties;
  */
 public class DAOFactory {
     
-    private static final String PROPERTIES_FILE   = "GestionMedic/Web Pages/WEB_INF/dao.properties";
+    private static final String PROPERTIES_FILE   = "GestionMedic/web/WEB_INF/dao.properties";
     private static final String PROPERTY_URL      = "url";
     private static final String PROPERTY_DRIVER   = "driver";
     private static final String PROPERTY_LOGIN    = "login";
@@ -80,5 +83,15 @@ public class DAOFactory {
         //Récupération de l'instance
         DAOFactory instance = new DAOFactory(url, login, password);
         return instance;
+    }
+    
+    //Connexion à la bdd
+    Connection getConnection() throws SQLException{
+        return DriverManager.getConnection(url, login, password);
+    }
+    
+    //Récupération de l'implémentation du DAO Médecin
+    public MedecinDao getMedecinDao(){
+        return new MedecinDaoImpl();
     }
 }
