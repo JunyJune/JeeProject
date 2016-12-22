@@ -26,6 +26,29 @@ public class RendezVous implements Serializable{
     @Column (name = "Date")
     private Date date;
     
+    @Column (name = "ID_Medecin")
+    private int idMedecin;
+    
+    @Column (name = "ID_Patient")
+    private int idPatient;
+    
+    @Column (name = "ID_Creneaux")
+    private int idCreneaux;
+    
+    RendezVous(Date d, int idM, int idP, int idC){
+        date = d;
+        idMedecin = idM;
+        idPatient = idP;
+        idCreneaux = idC;
+    }
+    
+    void modifierRdv(Date d, int idM, int idP, int idC){
+        date = d;
+        idMedecin = idM;
+        idPatient = idP;
+        idCreneaux = idC;
+    }
+    
     public void setDate(Date d) { date = d; }
     public Date getDate() { return date; }
 }

@@ -20,7 +20,7 @@ import javax.persistence.Id;
 public class Patient implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int IdPatient;
+    private int idPatient;
     
     @Column (name = "Nom")
     private String nom;
@@ -28,8 +28,25 @@ public class Patient implements Serializable{
     @Column (name = "Prenom")
     private String prenom;
     
-    public void setNom(String n) { nom = n; }
-    public String getNom() { return nom; }
-    public void setPrenom(String p) { prenom = p; }
-    public String getPrenom() { return prenom; }
+    Patient(String n, String p){
+        //IdPatient = nouvel ID généré par la base ?
+        nom = n;
+        prenom = p;
+    }
+    
+    public void setNom(String n){
+        nom = n;
+    }
+    
+    public String getNom(){
+        return nom;
+    }
+    
+    public void setPrenom(String p){
+        prenom = p;
+    }
+    
+    public String getPrenom(){
+        return prenom;
+    }
 }

@@ -21,7 +21,7 @@ import javax.persistence.Id;
 public class Creneaux implements Serializable{
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int IdCreneaux;
+    private int idCreneaux;
     
     @Column (name = "Debut")
     private Date debut;
