@@ -5,13 +5,25 @@
  */
 package entities;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  *
  * @author aude
  */
-public class RendezVous {
+@Entity
+public class RendezVous implements Serializable{
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private int IdRendezVous;
+    
+    @Column (name = "Date")
     private Date date;
     
     public void setDate(Date d) { date = d; }

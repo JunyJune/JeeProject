@@ -5,12 +5,27 @@
  */
 package entities;
 
+import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  *
  * @author aude
  */
-public class Medecin {
+@Entity
+public class Medecin implements Serializable{
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    private int IdMedecin;
+    
+    @Column (name = "Nom")
     private String nom;
+    
+    @Column (name = "Prenom")
     private String prenom;
     
     public void setNom(String n) { nom = n; }
