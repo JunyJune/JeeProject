@@ -28,10 +28,12 @@ public class Patient implements Serializable{
     @Column (name = "Prenom")
     private String prenom;
     
-    Patient(String n, String p){
-        //IdPatient = nouvel ID généré par la base ?
-        nom = n;
-        prenom = p;
+    public void setId(int i){
+        idPatient = i;
+    }
+    
+    public int getId(){
+        return idPatient;
     }
     
     public void setNom(String n){

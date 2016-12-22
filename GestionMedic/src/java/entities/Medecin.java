@@ -27,10 +27,12 @@ public class Medecin implements Serializable{
     @Column (name = "Prenom")
     private String prenom;
     
-    Medecin(String n, String p) {
-        //IdMedecin = nouvel ID généré par la base ?
-        nom = n;
-        prenom = p;
+    public void setId(int i){
+        idMedecin = i;
+    }
+    
+    public int getId(){
+        return idMedecin;
     }
     
     public void setNom(String n){
